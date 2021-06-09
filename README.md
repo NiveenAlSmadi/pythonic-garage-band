@@ -1,7 +1,7 @@
-LAB: Classes, and Fixtures
+# LAB: Classes, and Fixtures
 Author: Niveen ALsmadi Version: 1.0.0
 
-Problem Domain:
+## Problem Domain:
 Creating a Garage Band with Object Oriented Programming.
 
 
