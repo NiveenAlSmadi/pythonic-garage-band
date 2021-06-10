@@ -1,18 +1,32 @@
+  
+from abc import abstractmethod, ABC
 
 class Band():
 
-    all_band=[]
 
-    def __init__(self,name,member):
+    instance =[]
+    all_band=[]
+    solo_list=[]
+
+
+    def __init__(self,name,members):
         self.name=name 
-        self.members=member
+        self.members=members
         Band.all_band.append(self)
-    
+        Band.instance.append(self)
+
+
 
     def play_solos(self):
-        solo_list=[]
-        for x in self.members:
-            return solo_list
+        for i, member in enumerate(self.members):
+            if member.get_instrument() == 'guitar':
+                Band.solo_list.append("face melting guitar solo")
+            elif member.get_instrument() == 'bass':
+                Band.solo_list.append("bom bom buh bom")
+            elif member.get_instrument() == 'drums':
+                Band.solo_list.append("rattle boom crash")
+           
+        return Band.solo_list
 
 
     def __str__(self):
@@ -30,14 +44,19 @@ class Band():
         return cls.all_band
 
 
-
+#-------------------------------------------------------Bands--------------------------------------------------------------
 
 class Musician():
+    
+    def __init__(self,name):
+        self.name = name
 
+
+    @abstractmethod
     def __str__(self):
 
         pass
-
+    @abstractmethod
     def __repr__(self):
 
         pass 
@@ -47,51 +66,63 @@ class Musician():
         pass 
     
     
+
+
+
 class Guitarist(Musician):
 
     def __str__(self):
 
-        pass
+        return f"My name is {self.name} and I play guitar"
 
     def __repr__(self):
 
-        pass 
+        return f"Guitarist instance. Name = {self.name}"
 
     def get_instrument(self):
 
         return 'guitar'
+
     def play_solo(self):
 
-        pass 
+        return "face melting guitar solo"
+
+
+
 
 
 class Bassist(Musician): 
 
     def __str__(self):
 
-        pass
+      return f"My name is {self.name} and I play bass"
 
     def __repr__(self):
 
-        pass 
+         return f"Bassist instance. Name = {self.name}"
 
     def get_instrument(self):
 
         return 'bass'
+
     def play_solo(self):
 
-        pass 
+       return "bom bom buh bom"
+
+
+
 
 
 class  Drummer(Musician):
 
    def __str__(self):
 
-        pass
+       return f"My name is {self.name} and I play drums"
 
    def __repr__(self):
 
-        pass 
+        return f"Drummer instance. Name = {self.name}"
+
 
    def get_instrument(self):
 
@@ -100,4 +131,4 @@ class  Drummer(Musician):
 
    def play_solo(self):
 
-        pass 
+       return "rattle boom crash"
