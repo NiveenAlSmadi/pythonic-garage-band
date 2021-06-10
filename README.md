@@ -11,4 +11,4 @@ starting time: 5:30 pm
 Finish time: ------not finished------
 
 Links:
-PR Link :[madlib-cli](https://github.com/NiveenAlSmadi/pythonic-garage-band/pull/1)
+PR Link :[Garage Band](https://github.com/NiveenAlSmadi/pythonic-garage-band/pull/1)
