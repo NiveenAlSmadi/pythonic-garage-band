@@ -4,7 +4,7 @@ from abc import abstractmethod, ABC
 class Band():
 
 
-    instance =[]
+    instances =[]
     all_band=[]
     solo_list=[]
 
@@ -13,7 +13,7 @@ class Band():
         self.name=name 
         self.members=members
         Band.all_band.append(self)
-        Band.instance.append(self)
+        Band.instances.append(self)
 
 
 
